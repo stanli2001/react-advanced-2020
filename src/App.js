@@ -1,10 +1,13 @@
-import React from 'react'
-function App() {
-  return (
-    <div className='container'>
-      <h2>Advanced Tutorial</h2>
-    </div>
-  )
-}
+import React from "react";
+import Setup from "./tutorial/3-conditional-rendering/setup/1-multiple-returns";
 
-export default App
+function App() {  
+  return (
+    <main>
+      <section className="container">
+        <Setup />
+      </section>
+    </main>
+  );
+}
+export default App;
