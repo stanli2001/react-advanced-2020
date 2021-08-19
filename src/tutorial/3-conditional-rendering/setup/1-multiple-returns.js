@@ -4,6 +4,7 @@ const MultipleReturns = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [user, setUser] = useState("default user");
+  const [userurl, setUserurl] = useState([]);
   useEffect(() => {
     fetch(url)
       .then((resp) => {
@@ -16,9 +17,10 @@ const MultipleReturns = () => {
         }
       })
       .then((user) => {
-        const { login } = user;
+        const { login, html_url } = user;
         setIsLoading(false);
         setUser(login);
+        setUserurl(html_url);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -39,7 +41,10 @@ const MultipleReturns = () => {
   }
   return (
     <div>
-      <h1>{user}</h1>
+      <h3> visit </h3>
+      <a href={userurl} target="_blank" rel="noopener noreferrer">
+        <h3>{user}</h3>
+      </a>
     </div>
   );
 };

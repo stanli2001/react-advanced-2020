@@ -11,7 +11,7 @@ const UseEffectFetchData = () => {
     setUser(users);
   };
 
-  //by default userEffect will be fired after every completed render
+  //by default userEffect will be fired for every render
   //this behavior will create an inifinte loop because the setUser function inside getUsers will force re-render the page
   //to fix that, pass a second argument, an array, to useEffect, which for this page is an empty array
   //This second argument acts like an anchor, which changes the default behavior of the useEffect.
